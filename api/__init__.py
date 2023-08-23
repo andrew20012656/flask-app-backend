@@ -2,13 +2,14 @@ import os
 import torch
 import json
 from flask import Flask, request
-from api import chatbot, neural_model
+from api import chatbot, neural_model, train
 
 
 def create_app():
     app = Flask(__name__)
     # app.config['model'], app.config['tags'], app.config['all_words'] = setup()
-
+    model, all_words, tags = train.train()
+    
     @app.route("/about")
     def about():
         return "about"
@@ -19,8 +20,9 @@ def create_app():
     
     @app.route("/chat", methods=["POST"])
     def chat():
+        
         user_prompt = request.get_json()['prompt']
-        model, tags, all_words = setup()
+        # model, tags, all_words = setup()
         # response = chatbot.respond(app.config['model'],
         #                user_prompt,
         #                app.config['tags'],
@@ -34,26 +36,26 @@ def create_app():
     return app
 
 
-def setup():
-    script_directory = os.path.dirname(os.path.abspath(__file__))
-    data_path = os.path.join(script_directory, 'data.json')
+# def setup():
+#     script_directory = os.path.dirname(os.path.abspath(__file__))
+#     data_path = os.path.join(script_directory, 'data.json')
 
-    with open(data_path, 'r') as json_data:
-        intents = json.load(json_data)
+#     with open(data_path, 'r') as json_data:
+#         intents = json.load(json_data)
 
-    model_path = os.path.join(script_directory, 'data.pth')
-    data = torch.load(model_path)
+#     model_path = os.path.join(script_directory, 'data.pth')
+#     data = torch.load(model_path)
 
-    input_size = data["input_size"]
-    hidden_size = data["hidden_size"]
-    output_size = data["output_size"]
-    all_words = data['all_words']
-    tags = data['tags']
-    model_state = data["model_state"]
+#     input_size = data["input_size"]
+#     hidden_size = data["hidden_size"]
+#     output_size = data["output_size"]
+#     all_words = data['all_words']
+#     tags = data['tags']
+#     model_state = data["model_state"]
 
-    model = neural_model.NeuralNet(
-        input_size, hidden_size, output_size)
-    model.load_state_dict(model_state)
-    model.eval()
+#     model = neural_model.NeuralNet(
+#         input_size, hidden_size, output_size)
+#     model.load_state_dict(model_state)
+#     model.eval()
 
-    return model, tags, all_words
+#     return model, tags, all_words
