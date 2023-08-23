@@ -7,7 +7,7 @@ from api import chatbot, neural_model
 
 def create_app():
     app = Flask(__name__)
-    app.config['model'], app.config['tags'], app.config['all_words'] = setup()
+    # app.config['model'], app.config['tags'], app.config['all_words'] = setup()
 
     @app.route("/about")
     def about():
@@ -20,10 +20,15 @@ def create_app():
     @app.route("/chat", methods=["POST"])
     def chat():
         user_prompt = request.get_json()['prompt']
-        response = chatbot.respond(app.config['model'],
+        model, tags, all_words = setup()
+        # response = chatbot.respond(app.config['model'],
+        #                user_prompt,
+        #                app.config['tags'],
+        #                app.config['all_words'])
+        response = chatbot.respond(model,
                        user_prompt,
-                       app.config['tags'],
-                       app.config['all_words'])
+                       tags,
+                       all_words)
         return response
     
     return app
