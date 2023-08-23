@@ -7,4 +7,8 @@ def create_app():
     def about():
         return "about"
     
+    @app.route("/home")
+    def home():
+        return "home"
+    
     return app
