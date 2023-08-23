@@ -30,4 +30,4 @@ def respond(model, prompt, tags, all_words):
             if tag == intent["tag"]:
                 return f"{random.choice(intent['responses'])}"
     else:
-        return f"I do not understand..."
+        return f"I do not understand."
