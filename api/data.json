@@ -1,0 +1,36 @@
+{
+  "intents": [
+    {
+      "tag": "name",
+      "patterns": [
+        "What's your name",
+        "What should I call you",
+        "Your name",
+        "Who are you"
+      ],
+      "responses": [
+        "Andrew",
+        "My name is Andrew",
+        "You can call me Andrew",
+        "I'm Andrew"
+      ]
+    },
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hey :-)",
+        "Hello, thanks for visiting",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    }
+  ]
+}
