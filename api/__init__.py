@@ -2,6 +2,7 @@ import os
 import torch
 import json
 from flask import Flask, request
+from flask_cors import CORS
 from api import chatbot, neural_model, train
 
 
@@ -9,10 +10,11 @@ def create_app():
     app = Flask(__name__)
     # app.config['model'], app.config['tags'], app.config['all_words'] = setup()
     model, all_words, tags = train.train()
-    
+    CORS(app)
+
     @app.route("/about")
     def about():
-        return "about"
+        return "about1"
     
     @app.route("/home")
     def home():
@@ -31,7 +33,7 @@ def create_app():
                        user_prompt,
                        tags,
                        all_words)
-        return response
+        return {"response": response}
     
     return app
 
