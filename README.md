@@ -2,4 +2,4 @@
 
 ## Environment
 
-- Built with React (frontend) + Flask (backend). Deployed using Gunicorn + Nginx on Ubuntu hosted on DigitalOcean.
+- Built with React (frontend) + Flask (backend). Deployment was achieved by utilizing Gunicorn and Nginx on an Ubuntu server hosted on DigitalOcean.
