@@ -9,7 +9,7 @@ from api import chatbot, neural_model, train
 def create_app():
     app = Flask(__name__)
     # app.config['model'], app.config['tags'], app.config['all_words'] = setup()
-    model, all_words, tags = train.train()
+    model, all_words, tags = chatbot.load_model()
     CORS(app)
 
     @app.route("/about")

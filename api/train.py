@@ -111,19 +111,20 @@ def train():
             print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}')
 
 
-    # print(f'final loss: {loss.item():.4f}')
+    print(f'final loss: {loss.item():.4f}')
 
-    # data = {
-    #     "model_state": model.state_dict(),
-    #     "input_size": input_size,
-    #     "hidden_size": hidden_size,
-    #     "output_size": output_size,
-    #     "all_words": all_words,
-    #     "tags": tags
-    # }
+    data = {
+        "model_state": model.state_dict(),
+        "input_size": input_size,
+        "hidden_size": hidden_size,
+        "output_size": output_size,
+        "all_words": all_words,
+        "tags": tags
+    }
 
-    # FILE = "data.pth"
-    # torch.save(data, FILE)
+    script_directory = os.path.dirname(os.path.abspath(__file__))
+    FILE = os.path.join(script_directory, 'data.pth')
+    torch.save(data, FILE)
 
-    # print(f'training complete. file saved to {FILE}')
-    return model, all_words, tags
+    print(f'training complete. file saved to {FILE}')
+    # return model, all_words, tags
