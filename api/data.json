@@ -144,6 +144,28 @@
       "responses": [
         "I've had the privilege of gaining valuable professional experience through internships and projects. Notably, I completed an Actuarial Internship at MetLife, a Data Analyst Internship at HireBeat. Additionally, I worked as a Java Developer Intern at Wind."
       ]
+    },
+    {
+      "tag": "self_introduction",
+      "patterns": [
+        "Introduce yourself",
+        "Tell me about yourself",
+        "Can you give me a brief introduction?",
+        "How would you describe yourself?",
+        "Share a little about who you are.",
+        "Who is Andrew?",
+        "Could you provide a self-introduction?",
+        "What can you tell me about your background?",
+        "Could you briefly tell me about yourself?",
+        "Let's start with a self-introduction.",
+        "Who am I speaking with?"
+      ],
+      "responses": [
+        "Absolutely, I'm Andrew. Cornell alum with a double major in Information Science and Biometry & Statistics, plus a minor in Business. I've interned at MetLife, where I worked on essential reports, and at HireBeat, researching labor trends. My interests span fingerstyle guitar, EDM, Enneagram, fencing, and boxing.",
+        "Sure thing, I'm Andrew. I graduated from Cornell, majoring in Information Science and Biometry & Statistics, and minoring in Business. I've interned at MetLife, contributing to economic capital reports, and at HireBeat, where I explored labor market trends. Off work, I'm into fingerstyle guitar, EDM, Enneagram, and staying active.",
+        "Of course, I'm Andrew. I completed a double major in Information Science and Biometry & Statistics at Cornell, and I also have a minor in Business. During my internships at MetLife and HireBeat, I gained experience in economic capital reports and labor trend analysis, respectively. Outside of that, I enjoy fingerstyle guitar, EDM, Enneagram, and physical activities like fencing and boxing.",
+        "Certainly, I'm Andrew. My academic journey led me to graduate from Cornell with a double major in Information Science and Biometry & Statistics, plus a minor in Business. I've contributed to economic capital reports as an intern at MetLife and conducted labor market research at HireBeat. Beyond that, I'm enthusiastic about fingerstyle guitar, EDM, Enneagram, and maintaining an active lifestyle through fencing and boxing."
+      ]
     }
   ]
 }

@@ -9,6 +9,10 @@ from torch.utils.data import Dataset, DataLoader
 from .nltk_utils import bag_of_words, tokenize, stem
 from .neural_model import NeuralNet
 
+
+# from nltk_utils import bag_of_words, tokenize, stem
+# from neural_model import NeuralNet
+
 def train():
     script_directory = os.path.dirname(os.path.abspath(__file__))
     data_path = os.path.join(script_directory, 'data.json')
@@ -128,3 +132,5 @@ def train():
 
     print(f'training complete. file saved to {FILE}')
     # return model, all_words, tags
+
+# train()
